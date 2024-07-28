@@ -18,7 +18,7 @@ unsigned int loadCubemap(std::vector<std::string> faces);
 void RenderText(Shader &shader, std::string text, float x, float y, float scale, glm::vec3 color);
 
 const unsigned int SCR_WIDTH  = 1200;
-const unsigned int SCR_HEIGHT =  900;
+const unsigned int SCR_HEIGHT = 1200;
 
 glm::vec2 zoom   = glm::vec2(2.0f, 2.0f);
 glm::vec2 offset = glm::vec2(1.5f, 1.0f);
@@ -127,28 +127,28 @@ void processInput(GLFWwindow* window){
     }
 
     if(glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS && glfwGetKey(window, GLFW_KEY_SPACE)){
-        zoom.x += 0.01;
-        zoom.y += 0.01;
+        zoom.x += 0.01 * zoom.x;
+        zoom.y += 0.01 * zoom.y;
     }
     else if(glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS){
-        zoom.x -= 0.01;
-        zoom.y -= 0.01;
+        zoom.x -= 0.01 * zoom.x;
+        zoom.y -= 0.01 * zoom.y;
     }
 
     if(glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS){
-        offset.x += 0.001;
+        offset.x += 0.001 * offset.x * offset.x / 1.5;
     }
 
     if(glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS){
-        offset.x -= 0.001;
+        offset.x -= 0.001 * offset.x * offset.x / 1.5;
     }
 
     if(glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS){
-        offset.y -= 0.001;
+        offset.y -= 0.001 * offset.y * offset.y;
     }
 
     if(glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS){
-        offset.y += 0.001;
+        offset.y += 0.001 * offset.y * offset.y;
     }
 
 }

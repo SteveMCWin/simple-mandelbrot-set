@@ -15,10 +15,10 @@ float mandelbrotValue(vec2 coord){
     for(int i = 0; i < max_iterations; i++){
         z = squareImaginary(z) + coord;
         if(length(z) > 2){
-            return float(i)/(max_iterations*max_iterations);
+            return float(i)/(max_iterations);
         }
     }
-    return 1.0;
+    return float(max_iterations);
 
 }
 
