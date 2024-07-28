@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/stevica/openGL_projects/fractals/build",
+  "command": "/usr/bin/c++    -o CMakeFiles/my_opengl_project.dir/main.cpp.o -c /home/stevica/openGL_projects/fractals/main.cpp",
+  "file": "/home/stevica/openGL_projects/fractals/main.cpp"
+},
+{
+  "directory": "/home/stevica/openGL_projects/fractals/build",
+  "command": "/usr/bin/cc    -o CMakeFiles/my_opengl_project.dir/glad.c.o -c /home/stevica/openGL_projects/fractals/glad.c",
+  "file": "/home/stevica/openGL_projects/fractals/glad.c"
+}
+]
